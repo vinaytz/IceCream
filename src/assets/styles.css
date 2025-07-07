@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap');
+
+:root {
+  --primary-color: #8B4513; /* Saddle Brown - warm, inviting */
+  --secondary-color: #FFDAB9; /* Peach Puff - soft, creamy */
+  --accent-color: #A0522D; /* Sienna - deeper brown for contrast */
+  --text-color: #333333;
+  --light-text-color: #666666;
+  --background-color: #FDF5E6; /* Old Lace - very light, warm background */
+  --card-bg-color: #FFFFFF;
+  --border-color: #E0E0E0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* General */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--card-bg-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  color: var(--primary-color) !important;
+  padding-left: 1rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-color) !important;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 80vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color);
+  padding-top: 80px; /* Space for fixed navbar */
+}
+
+.hero-section h1 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  color: var(--light-text-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 14px 35px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Flavor Card */
+.flavor-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flavor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.flavor-card .card-img-top {
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.flavor-card .card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flavor-card .card-title {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.flavor-card .card-text {
+  color: var(--light-text-color);
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.flavor-card .d-flex {
+  margin-top: 1.5rem;
+}
+
+.flavor-card .btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.flavor-card .btn-secondary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.flavor-card .mx-2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 0;
+  margin-top: 6rem;
+}
+
+.footer p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  fill: var(--secondary-color);
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  fill: white;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s; /* Delay for a smoother staggered effect */
+  opacity: 0; /* Start invisible */
+}
